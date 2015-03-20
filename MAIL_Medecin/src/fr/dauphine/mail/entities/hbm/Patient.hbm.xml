@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Patient" table="PATIENT">
+        <id name="idPatient" type="java.lang.Long">
+            <column name="IDPATIENT" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="prenom" type="java.lang.String">
+            <column name="PRENOM" />
+        </property>
+        <property name="dateNaissance" type="java.util.Date">
+            <column name="DATENAISSANCE" />
+        </property>
+        <property name="sexe" type="java.lang.String">
+            <column name="SEXE" />
+        </property>
+        <property name="tel" type="java.lang.String">
+            <column name="TEL" />
+        </property>
+        <property name="adresse" type="java.lang.String">
+            <column name="ADRESSE" />
+        </property>
+        <property name="ville" type="java.lang.String">
+            <column name="VILLE" />
+        </property>
+        <list name="traitements" inverse="false" table="TRAITEMENT" lazy="true">
+            <key>
+                <column name="IDPATIENT" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="fr.dauphine.mail.entities.Traitement" />
+        </list>
+    </class>
+</hibernate-mapping>

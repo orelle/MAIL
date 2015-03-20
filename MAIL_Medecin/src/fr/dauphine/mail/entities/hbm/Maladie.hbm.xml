@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Maladie" table="MALADIE">
+        <id name="idMaladie" type="java.lang.Long">
+            <column name="IDMALADIE" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelle" type="java.lang.String">
+            <column name="LIBELLE" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <list name="medicaments" inverse="true" table="MALADIE_MEDICAMENT" lazy="true">
+            <key>
+                <column name="IDMALADIE" />
+            </key>
+            <list-index column="list_idx"></list-index>
+            <many-to-many class="fr.dauphine.mail.entities.Medicament" column="IDMEDIC"/>
+        </list>
+    </class>
+</hibernate-mapping>

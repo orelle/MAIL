@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Medicament" table="MEDICAMENT">
+        <id name="idMedic" type="java.lang.Long">
+            <column name="IDMEDIC" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelle" type="java.lang.String">
+            <column name="LIBELLE" />
+        </property>
+        <property name="description" type="java.lang.String">
+            <column name="DESCRIPTION" />
+        </property>
+        <property name="etat">
+            <column name="ETAT" />
+            <type name="org.hibernate.type.EnumType">
+                <param name="type">12</param>
+                <param name="enumClass">fr.dauphine.mail.entities.Medicament$MedicamentEtat</param>
+            </type>
+        </property>
+        <property name="dateCreation" type="java.util.Date">
+            <column name="DATECREATION" />
+        </property>
+        <list name="properties" inverse="false" table="MEDICAMENTPROPERTY" lazy="true">
+            <key>
+                <column name="IDMEDIC" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="fr.dauphine.mail.entities.MedicamentProperty" />
+        </list>
+        <list name="contrats" inverse="false" table="CONTRAT_MEDICAMENT" lazy="true">
+            <key>
+                <column name="IDMEDIC" />
+            </key>
+            <list-index column="list_idx"></list-index>
+            <many-to-many class="fr.dauphine.mail.entities.Contrat" column="IDCONTRAT"  />
+        </list>
+        <list name="maladies" inverse="false" table="MALADIE_MEDICAMENT" lazy="true">
+            <key>
+                <column name="IDMEDIC" />
+            </key>
+            <list-index column="list_idx"></list-index>
+            <many-to-many class="fr.dauphine.mail.entities.Maladie" column="IDMALADIE"/>
+        </list>
+    </class>
+</hibernate-mapping>

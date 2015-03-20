@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Symptome" table="SYMPTOME">
+        <id name="idSymptome" type="java.lang.Long">
+            <column name="IDSYMPTOME" />
+            <generator class="assigned" />
+        </id>
+        <property name="libelle" type="java.lang.String">
+            <column name="LIBELLE" />
+        </property>
+        <many-to-one name="traitement" class="fr.dauphine.mail.entities.Traitement" fetch="join">
+            <column name="IDTRAITEMENT" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>

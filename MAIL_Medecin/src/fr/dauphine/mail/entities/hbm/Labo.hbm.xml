@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Labo" table="LABO">
+        <id name="idLabo" type="java.lang.Long">
+            <column name="IDLABO" />
+            <generator class="assigned" />
+        </id>
+        <property name="nom" type="java.lang.String">
+            <column name="NOM" />
+        </property>
+        <property name="adresse" type="java.lang.String">
+            <column name="ADRESSE" />
+        </property>
+        <property name="ville" type="java.lang.String">
+            <column name="VILLE" />
+        </property>
+    </class>
+</hibernate-mapping>

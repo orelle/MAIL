@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Traitement" table="TRAITEMENT">
+        <id name="idTraitement" type="java.lang.Long">
+            <column name="IDTRAITEMENT" />
+            <generator class="assigned" />
+        </id>
+        <property name="dureeJours" type="int">
+            <column name="DUREEJOURS" />
+        </property>
+        <property name="dateDebut" type="java.util.Date">
+            <column name="DATEDEBUT" />
+        </property>
+        <property name="progres" type="int">
+            <column name="PROGRES" />
+        </property>
+        <many-to-one name="medecin" class="fr.dauphine.mail.entities.Medecin" fetch="join">
+            <column name="IDMEDECIN" />
+        </many-to-one>
+        <many-to-one name="patient" class="fr.dauphine.mail.entities.Patient" fetch="join">
+            <column name="IDPATIENT" />
+        </many-to-one>
+        <many-to-one name="maladie" class="fr.dauphine.mail.entities.Maladie" fetch="join">
+            <column name="IDMALADIE" />
+        </many-to-one>
+        <list name="medicaments" inverse="false" table="TRAITEMENT_MEDICAMENT" lazy="true">
+            <key>
+                <column name="IDTRAITEMENT" />
+            </key>
+            <list-index column="list_idx"></list-index>
+            <many-to-many class="fr.dauphine.mail.entities.Medicament" column="IDMEDIC" />
+        </list>
+        <list name="symptomes" inverse="false" table="SYMPTOME" lazy="true">
+            <key>
+                <column name="IDTRAITEMENT" />
+            </key>
+            <list-index></list-index>
+            <one-to-many class="fr.dauphine.mail.entities.Symptome" />
+        </list>
+    </class>
+</hibernate-mapping>

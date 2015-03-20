@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18 mars 2015 22:35:16 by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="fr.dauphine.mail.entities.Contrat" table="CONTRAT">
+        <id name="idContrat" type="java.lang.Long">
+            <column name="IDCONTRAT" />
+            <generator class="assigned" />
+        </id>
+        <many-to-one name="labo" class="fr.dauphine.mail.entities.Labo" fetch="join">
+            <column name="IDLABO" />
+        </many-to-one>
+        <many-to-one name="medecin" class="fr.dauphine.mail.entities.Medecin" fetch="join">
+            <column name="IDMEDECIN" />
+        </many-to-one>
+        <property name="dateDebut" type="java.util.Date">
+            <column name="DATEDEBUT" />
+        </property>
+        <property name="dateFin" type="java.util.Date">
+            <column name="DATEFIN" />
+        </property>
+        <property name="Salaire" type="double">
+            <column name="SALAIRE" />
+        </property>
+        <property name="isValide" type="boolean" access="field">
+            <column name="ISVALIDE" />
+        </property>
+        <list name="medicaments" inverse="true" table="CONTRAT_MEDICAMENT" lazy="true">
+            <key>
+                <column name="IDCONTRAT" />
+            </key>
+            <list-index column="list_idx"></list-index>
+            <many-to-many class="fr.dauphine.mail.entities.Medicament" column="IDMEDIC" />
+        </list>
+    </class>
+</hibernate-mapping>
