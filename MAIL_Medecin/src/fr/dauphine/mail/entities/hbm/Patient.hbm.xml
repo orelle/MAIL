@@ -29,7 +29,7 @@
         <property name="ville" type="java.lang.String">
             <column name="VILLE" />
         </property>
-        <list name="traitements" inverse="false" table="TRAITEMENT" lazy="true">
+        <list name="traitements" inverse="false" table="TRAITEMENT" lazy="false">
             <key>
                 <column name="IDPATIENT" />
             </key>

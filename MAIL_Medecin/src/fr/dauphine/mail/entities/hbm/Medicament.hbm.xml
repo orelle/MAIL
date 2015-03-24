@@ -24,21 +24,21 @@
         <property name="dateCreation" type="java.util.Date">
             <column name="DATECREATION" />
         </property>
-        <list name="properties" inverse="false" table="MEDICAMENTPROPERTY" lazy="true">
+        <list name="properties" inverse="false" table="MEDICAMENTPROPERTY" lazy="false" cascade="all" >
             <key>
                 <column name="IDMEDIC" />
             </key>
             <list-index></list-index>
             <one-to-many class="fr.dauphine.mail.entities.MedicamentProperty" />
         </list>
-        <list name="contrats" inverse="false" table="CONTRAT_MEDICAMENT" lazy="true">
+        <list name="contrats" inverse="true" table="CONTRAT_MEDICAMENT" lazy="false">
             <key>
                 <column name="IDMEDIC" />
             </key>
             <list-index column="list_idx"></list-index>
             <many-to-many class="fr.dauphine.mail.entities.Contrat" column="IDCONTRAT"  />
         </list>
-        <list name="maladies" inverse="false" table="MALADIE_MEDICAMENT" lazy="true">
+        <list name="maladies" inverse="false" table="MALADIE_MEDICAMENT" lazy="false">
             <key>
                 <column name="IDMEDIC" />
             </key>

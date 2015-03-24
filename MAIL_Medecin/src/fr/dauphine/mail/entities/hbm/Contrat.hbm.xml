@@ -26,7 +26,7 @@
         <property name="isValide" type="boolean" access="field">
             <column name="ISVALIDE" />
         </property>
-        <list name="medicaments" inverse="true" table="CONTRAT_MEDICAMENT" lazy="true">
+        <list name="medicaments" inverse="false" table="CONTRAT_MEDICAMENT" lazy="false">
             <key>
                 <column name="IDCONTRAT" />
             </key>

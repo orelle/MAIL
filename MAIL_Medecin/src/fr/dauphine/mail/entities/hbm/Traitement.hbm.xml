@@ -26,14 +26,14 @@
         <many-to-one name="maladie" class="fr.dauphine.mail.entities.Maladie" fetch="join">
             <column name="IDMALADIE" />
         </many-to-one>
-        <list name="medicaments" inverse="false" table="TRAITEMENT_MEDICAMENT" lazy="true">
+        <list name="medicaments" inverse="false" table="TRAITEMENT_MEDICAMENT" lazy="false">
             <key>
                 <column name="IDTRAITEMENT" />
             </key>
             <list-index column="list_idx"></list-index>
             <many-to-many class="fr.dauphine.mail.entities.Medicament" column="IDMEDIC" />
         </list>
-        <list name="symptomes" inverse="false" table="SYMPTOME" lazy="true">
+        <list name="symptomes" inverse="false" table="SYMPTOME" lazy="false" cascade="all">
             <key>
                 <column name="IDTRAITEMENT" />
             </key>
