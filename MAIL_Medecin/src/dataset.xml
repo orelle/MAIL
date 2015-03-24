@@ -9,10 +9,12 @@
   <contrat IDCONTRAT="3" IDLABO="1" IDMEDECIN="1" DATEDEBUT="2015-03-01 00:00:00.0" DATEFIN="2017-02-10 00:00:00.0" SALAIRE="3000.0" ISVALIDE="true"/>
   <medicament IDMEDIC="1" LIBELLE="AntiGrippe" DESCRIPTION="desc1" ETAT="EN_COURS" DATECREATION="2015-03-01 00:00:00.0"/>
   <medicament IDMEDIC="2" LIBELLE="Actionfed" DESCRIPTION="desc2" ETAT="EN_VENTE" DATECREATION="2015-03-01 00:00:00.0"/>
+  <medicament IDMEDIC="3" LIBELLE="Catex" DESCRIPTION="desc2" ETAT="EN_VENTE" DATECREATION="2015-01-01 00:00:00.0"/>
   <contrat_medicament IDMEDIC="1" IDCONTRAT="1" list_idx="0"/>
   <contrat_medicament IDMEDIC="2" IDCONTRAT="2" list_idx="0"/>
   <maladie IDMALADIE="1" LIBELLE="Grippe"/>
   <maladie IDMALADIE="2" LIBELLE="Virus X"/>
+  <maladie IDMALADIE="3" LIBELLE="Virus Y"/>
   <patient IDPATIENT="1" NOM="djoko" PRENOM="aurel" DATENAISSANCE="1988-01-19 00:00:00.0" SEXE="M" TEL="0788996633" ADRESSE="187 rue Robespierre" VILLE="Paris 15"/>
   <patient IDPATIENT="2" NOM="CARICE" PRENOM="Mathilde" DATENAISSANCE="1980-03-03 00:00:00.0" SEXE="F" TEL="061234443" ADRESSE="345 Avenue Victor Hugo" VILLE="Paris 16"/>
   <traitement IDTRAITEMENT="1" DUREEJOURS="30" DATEDEBUT="2015-01-01 00:00:00.0" PROGRES="85" IDMEDECIN="1" IDPATIENT="1" IDMALADIE="1" idx="0"/>
@@ -23,6 +25,6 @@
   <traitement_medicament IDTRAITEMENT="1" IDMEDIC="2" list_idx="1"/>
   <maladie_medicament IDMEDIC="1" IDMALADIE="1" list_idx="0"/>
   <maladie_medicament IDMEDIC="2" IDMALADIE="2" list_idx="0"/>
-  <medicamentproperty IDMP="1" LIBELLE="libelle" TYPE="DOSE" IDMEDIC="1" idx="0"/>
+  <medicamentproperty IDMP="1" LIBELLE="2 par jour" TYPE="DOSE" IDMEDIC="1" idx="0"/>
   <medicamentproperty IDMP="2" LIBELLE="libelle2" TYPE="INDICATION" IDMEDIC="2" idx="0"/>
 </dataset>

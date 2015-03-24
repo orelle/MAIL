@@ -22,13 +22,12 @@ public class BaseTestCase extends DatabaseTestCase {
 
 	@Override
 	protected IDatabaseConnection getConnection() throws Exception {
-		//SessionFactory sessionFactory = ((HibernateEntityManagerFactory) entityManagerFactory).getSessionFactory();
 		SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
 		Properties properties = ((SessionFactoryImpl) sessionFactory).getProperties();
 		String url = (String) properties.get("hibernate.connection.url");
 		String username = (String) properties.get("hibernate.connection.username");
 		String password = (String) properties.get("hibernate.connection.password");
-		Class.forName("com.mysql.jdbc.Driver");
+		//Class.forName("com.mysql.jdbc.Driver");
 		jdbcConnection = DriverManager.getConnection(
 				url, username, password);
 		return new DatabaseConnection(jdbcConnection);

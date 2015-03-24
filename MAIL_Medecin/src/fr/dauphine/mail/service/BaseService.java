@@ -21,15 +21,6 @@ public class BaseService<T extends Serializable, PK extends Serializable> {
 	}
 
 	public Session getSession() {
-		/*
-		 * Session session = null; try{ session =
-		 * HibernateUtil.getSessionFactory().getCurrentSession(); }catch(
-		 * HibernateException e){ System.out.println("HibernateException"); }
-		 * System.out.println("After  session = "+session); if(session == null
-		 * || ! session.isOpen()){ session =
-		 * HibernateUtil.getSessionFactory().openSession(); }
-		 * System.out.println("End  session = "+session); return session;
-		 */
 		if (session == null || !session.isOpen()) {
 			session = HibernateUtil.getSessionFactory().openSession();
 			dao.setSession(session);

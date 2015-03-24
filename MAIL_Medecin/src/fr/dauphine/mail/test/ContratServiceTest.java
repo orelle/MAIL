@@ -11,6 +11,7 @@ import fr.dauphine.mail.entities.Medecin;
 import fr.dauphine.mail.service.ContratServiceImpl;
 import fr.dauphine.mail.service.LaboServiceImpl;
 import fr.dauphine.mail.service.MedecinServiceImpl;
+import fr.dauphine.mail.service.MedicamentServiceImpl;
 import fr.dauphine.mail.util.DateUtils;
 
 public class ContratServiceTest extends BaseTestCase {
@@ -50,10 +51,12 @@ public class ContratServiceTest extends BaseTestCase {
 	@Test
 	public void testDeleteByID() {
 		long before = service.count();
-		service.deleteById(3L);
+		service.deleteById(2L);
 		long after = service.count();
 		assertEquals(before - 1, after);
-		assertNull(service.findById(3L));
+		assertNull(service.findById(2L));
+		MedicamentServiceImpl medServiceImpl = new MedicamentServiceImpl();
+		assertNotNull(medServiceImpl.findById(2L));
 	}
 	
 	@Test
@@ -98,6 +101,7 @@ public class ContratServiceTest extends BaseTestCase {
 		MedecinServiceImpl medService = new MedecinServiceImpl();
 		Medecin m = medService.findById(1L);
 		List<Contrat> lsContrats = service.getAllContratByMedecin(m);
+		assertNotNull(lsContrats);
 		assertEquals(3, lsContrats.size());
 	}
 	
@@ -106,6 +110,7 @@ public class ContratServiceTest extends BaseTestCase {
 		LaboServiceImpl laboService = new LaboServiceImpl();
 		Labo labo = laboService.findById(1L);
 		List<Contrat> lsContrats = service.getAllContratByLabo(labo);
+		assertNotNull(lsContrats);
 		assertEquals(3, lsContrats.size());
 	}
 }

@@ -7,5 +7,4 @@ public class MedicamentServiceImpl extends BaseService<Medicament, Long> {
 	public MedicamentServiceImpl() {
 		super(new MedicamentDAOImpl());
 	}
-
 }
