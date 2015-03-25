@@ -61,8 +61,6 @@ public class TraitementServiceTest extends BaseTestCase {
 		lsMedic.add(med);
 		List<Symptome> lsSymp = new ArrayList<Symptome>();
 		lsSymp.add(s);
-		
-		
 		//Traitement t = new Traitement(10L, 60, new Date(), 5, m, p, maladie, lsMedic, lsSymp);
 		Traitement t = new Traitement(10L, 60, new Date(), 5, null, null, null, null, null);
 		long beforeCount = service.count();
@@ -72,14 +70,6 @@ public class TraitementServiceTest extends BaseTestCase {
 		assertNotNull(service.findById(10L));
 	}
 
-	@Test
-	public void testDeleteByID() {
-		long before = service.count();
-		service.deleteById(2L);
-		long after = service.count();
-		assertEquals(before - 1, after);
-		assertNull(service.findById(2L));
-	}
 
 	@Test
 	public void testDelete() {
@@ -89,6 +79,10 @@ public class TraitementServiceTest extends BaseTestCase {
 		long after = service.count();
 		assertEquals(before - 1, after);
 		assertNull(service.findById(1L));
+		SymptomeServiceImpl symServiceImpl = new SymptomeServiceImpl();
+		// on teste si les symtomes associés au traitement sont supprimés
+		assertNull(symServiceImpl.findById(1L));
+		assertNull(symServiceImpl.findById(2L));
 	}
 
 	@Test

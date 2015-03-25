@@ -9,7 +9,7 @@ public class Labo implements Serializable {
 	private String nom;
 	private String adresse;
 	private String ville;
-	//private List<Contrat> contrats;
+	
 	
 	public Labo() {
 	}
@@ -58,18 +58,6 @@ public class Labo implements Serializable {
 	public void setAdresse(String adresse) {
 		this.adresse = adresse;
 	}
-
-
-
-//	public List<Contrat> getContrats() {
-//		return contrats;
-//	}
-//
-//
-//
-//	public void setContrats(List<Contrat> contrats) {
-//		this.contrats = contrats;
-//	}
 
 
 

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import fr.dauphine.mail.entities.Maladie;
 import fr.dauphine.mail.entities.Medicament;
+import fr.dauphine.mail.service.MedicPropertyServiceImpl;
 import fr.dauphine.mail.service.MedicamentServiceImpl;
 import fr.dauphine.mail.util.DateUtils;
 
@@ -42,20 +43,24 @@ public class MedicamentServiceTest extends BaseTestCase {
 	@Test
 	public void testDeleteByID() {
 		long before = service.count();
-		service.deleteById(3L);
+		service.deleteById(4L);
 		long after = service.count();
 		assertEquals(before - 1, after);
-		assertNull(service.findById(3L));
+		assertNull(service.findById(4L));
+		MedicPropertyServiceImpl mpService = new MedicPropertyServiceImpl();
+		assertNull(mpService.findById(4L));
 	}
 
 	@Test
 	public void testDelete() {
 		long before = service.count();
-		Medicament m = service.findById(3L);
+		Medicament m = service.findById(4L);
 		service.delete(m);
 		long after = service.count();
 		assertEquals(before - 1, after);
-		assertNull(service.findById(3L));
+		assertNull(service.findById(4L));
+		MedicPropertyServiceImpl mpService = new MedicPropertyServiceImpl();
+		assertNull(mpService.findById(4L));
 	}
 
 	@Test

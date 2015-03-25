@@ -110,7 +110,7 @@ public class MedecinServiceTest extends BaseTestCase {
 		for (int i = 0; i < ls.size(); i++) {
 			lsMedic.addAll(ls.get(i).getMedicaments());
 		}
-		assertEquals(2, lsMedic.size());
+		assertEquals(3, lsMedic.size());
 	}
 
 	@Test

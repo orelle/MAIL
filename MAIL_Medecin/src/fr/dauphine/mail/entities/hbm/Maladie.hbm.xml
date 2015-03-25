@@ -16,10 +16,12 @@
         </property>
         <list name="medicaments" inverse="true" table="MALADIE_MEDICAMENT" lazy="false">
             <key>
-                <column name="IDMALADIE" />
+                <column name="IDMALADIE" not-null="false"/>
             </key>
             <list-index column="list_idx"></list-index>
-            <many-to-many class="fr.dauphine.mail.entities.Medicament" column="IDMEDIC"/>
+            <many-to-many class="fr.dauphine.mail.entities.Medicament" >
+            <column name="IDMEDIC" not-null="false"></column>
+            </many-to-many>
         </list>
     </class>
 </hibernate-mapping>

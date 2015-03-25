@@ -2,7 +2,7 @@
 <dataset>
   <labo IDLABO="1" NOM="GoodHealth" ADRESSE="14 rue Paraguay" VILLE="Paris"/>
   <labo IDLABO="2" NOM="HLAB" ADRESSE="Bd. Lannes" VILLE="Paris"/>
-  <medecin IDMEDECIN="1" NOM="ABID" PRENOM="Soufiane" DATENAISSANCE="1980-01-15 00:00:00.0" TEL="tel" EMAIL="sfn@gmail.com" SPECIALITE="specialite" ADRESSE="adresse" VILLE="ville"/>
+  <medecin IDMEDECIN="1" NOM="ABID" PRENOM="Soufiane" DATENAISSANCE="1980-01-15 00:00:00.0" TEL="tel" EMAIL="sfn@gmail.com" SPECIALITE="Urologue" ADRESSE="adresse" VILLE="ville"/>
   <medecin IDMEDECIN="2" NOM="BELHADI" PRENOM="Ouissam" DATENAISSANCE="1970-01-11 00:00:00.0" TEL="0766554433" EMAIL="ouissam.belhadi@gmail.com" SPECIALITE="Neurologue" ADRESSE="12 rue Louis Coutant" VILLE="Paris"/>
   <contrat IDCONTRAT="1" IDLABO="1" IDMEDECIN="1" DATEDEBUT="2015-01-01 00:00:00.0" DATEFIN="2016-02-10 00:00:00.0" SALAIRE="1000.0" ISVALIDE="true"/>
   <contrat IDCONTRAT="2" IDLABO="1" IDMEDECIN="1" DATEDEBUT="2015-02-01 00:00:00.0" DATEFIN="2018-02-10 00:00:00.0" SALAIRE="2000.0" ISVALIDE="true"/>
@@ -10,8 +10,10 @@
   <medicament IDMEDIC="1" LIBELLE="AntiGrippe" DESCRIPTION="desc1" ETAT="EN_COURS" DATECREATION="2015-03-01 00:00:00.0"/>
   <medicament IDMEDIC="2" LIBELLE="Actionfed" DESCRIPTION="desc2" ETAT="EN_VENTE" DATECREATION="2015-03-01 00:00:00.0"/>
   <medicament IDMEDIC="3" LIBELLE="Catex" DESCRIPTION="desc2" ETAT="EN_VENTE" DATECREATION="2015-01-01 00:00:00.0"/>
+  <medicament IDMEDIC="4" LIBELLE="AntiDouleur" DESCRIPTION="desc3" ETAT="EN_TEST" DATECREATION="2015-01-01 00:00:00.0"/>
   <contrat_medicament IDMEDIC="1" IDCONTRAT="1" list_idx="0"/>
   <contrat_medicament IDMEDIC="2" IDCONTRAT="2" list_idx="0"/>
+  <contrat_medicament IDMEDIC="3" IDCONTRAT="3" list_idx="0"/>
   <maladie IDMALADIE="1" LIBELLE="Grippe"/>
   <maladie IDMALADIE="2" LIBELLE="Virus X"/>
   <maladie IDMALADIE="3" LIBELLE="Virus Y"/>
@@ -19,6 +21,7 @@
   <patient IDPATIENT="2" NOM="CARICE" PRENOM="Mathilde" DATENAISSANCE="1980-03-03 00:00:00.0" SEXE="F" TEL="061234443" ADRESSE="345 Avenue Victor Hugo" VILLE="Paris 16"/>
   <traitement IDTRAITEMENT="1" DUREEJOURS="30" DATEDEBUT="2015-01-01 00:00:00.0" PROGRES="85" IDMEDECIN="1" IDPATIENT="1" IDMALADIE="1" idx="0"/>
   <traitement IDTRAITEMENT="2" DUREEJOURS="50" DATEDEBUT="2015-01-01 00:00:00.0" PROGRES="30" IDMEDECIN="1" IDPATIENT="2" IDMALADIE="2" idx="1"/>
+  <traitement IDTRAITEMENT="3" DUREEJOURS="70" DATEDEBUT="2015-01-01 00:00:00.0" PROGRES="87" IDMEDECIN="2" IDPATIENT="2" IDMALADIE="1" idx="2"/>
   <symptome IDSYMPTOME="1" LIBELLE="Maux de tete" IDTRAITEMENT="1" idx="0"/>
   <symptome IDSYMPTOME="2" LIBELLE="Trouble de sommeil" IDTRAITEMENT="1" idx="1"/>
   <traitement_medicament IDTRAITEMENT="1" IDMEDIC="1" list_idx="0"/>
@@ -26,5 +29,6 @@
   <maladie_medicament IDMEDIC="1" IDMALADIE="1" list_idx="0"/>
   <maladie_medicament IDMEDIC="2" IDMALADIE="2" list_idx="0"/>
   <medicamentproperty IDMP="1" LIBELLE="2 par jour" TYPE="DOSE" IDMEDIC="1" idx="0"/>
-  <medicamentproperty IDMP="2" LIBELLE="libelle2" TYPE="INDICATION" IDMEDIC="2" idx="0"/>
+  <medicamentproperty IDMP="2" LIBELLE="Pour soigner la grippe" TYPE="INDICATION" IDMEDIC="2" idx="0"/>
+  <medicamentproperty IDMP="3" LIBELLE="Pour infection urinaire" TYPE="INDICATION" IDMEDIC="3" idx="0"/>
 </dataset>

@@ -8,7 +8,7 @@
             <column name="IDCONTRAT" />
             <generator class="assigned" />
         </id>
-        <many-to-one name="labo" class="fr.dauphine.mail.entities.Labo" fetch="join">
+        <many-to-one name="labo" class="fr.dauphine.mail.entities.Labo" fetch="join" lazy="false">
             <column name="IDLABO" />
         </many-to-one>
         <many-to-one name="medecin" class="fr.dauphine.mail.entities.Medecin" fetch="join">

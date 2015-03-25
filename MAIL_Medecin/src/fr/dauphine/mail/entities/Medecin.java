@@ -139,21 +139,6 @@ public class Medecin implements Serializable {
 	}
 	
 	
-
-
-//	public List<Contrat> getContrat() {
-//		return contrat;
-//	}
-//
-//
-//	public void setContrat(List<Contrat> contrat) {
-//		this.contrat = contrat;
-//	}
-//	//added
-//	public List<Labo> getLabo(){
-//		
-//	}
-
 	
 	
 	

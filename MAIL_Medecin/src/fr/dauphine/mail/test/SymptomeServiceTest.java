@@ -37,14 +37,6 @@ public class SymptomeServiceTest  extends BaseTestCase{
 		assertNotNull(service.findById(10L));
 	}
 
-	@Test
-	public void testDeleteByID() {
-		long before = service.count();
-		service.deleteById(2L);
-		long after = service.count();
-		assertEquals(before - 1, after);
-		assertNull(service.findById(2L));
-	}
 
 	@Test
 	public void testDelete() {
